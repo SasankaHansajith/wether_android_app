@@ -1,0 +1,31 @@
+name: wether_app
+description: "A new Flutter project."
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  font_awesome_flutter: ^10.7.0 # Keep only one version
+  material_design_icons_flutter: ^7.0.7296
+  flutter_vector_icons: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/signup_bg.jpg
+    - assets/images/login_bg.jpg
+    - assets/images/background.jpg
+    - assets/images/cloud_background.jpg
