@@ -11,6 +11,8 @@ class WeatherService {
 
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body);
+      final lat = json['coord']['lat'];
+      final lon = json['coord']['lon'];
       final countryCode = json['sys']['country'] ?? "";
       final country = _getCountryName(countryCode);
 
@@ -18,8 +20,10 @@ class WeatherService {
         "temperature": "${json['main']['temp'].round()} ℃",
         "humidity": "${json['main']['humidity']}%",
         "windSpeed": "${json['wind']['speed']} Km/h",
-        "longitude": "${json['coord']['lon']}° E",
-        "latitude": "${json['coord']['lat']}° N",
+        "longitude": "$lon° E",
+        "latitude": "$lat° N",
+        "rawLongitude": lon.toString(), // Add these
+        "rawLatitude": lat.toString(),
         "condition": json['weather'][0]['main'].toLowerCase(),
         "description": json['weather'][0]['description'],
         "city": json['name'],
@@ -48,7 +52,6 @@ class WeatherService {
       "RU": "Russia",
       "BR": "Brazil",
     };
-
     return countryMap[code] ?? code;
   }
 }

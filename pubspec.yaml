@@ -30,12 +30,25 @@ flutter:
     - assets/images/signup_bg.jpg
     - assets/images/login_bg.jpg
     - assets/images/background.jpg
-    - assets/images/cloud_background.jpg
-    - assets/images/clear.jpg
-    - assets/images/clouds.jpg
-    - assets/images/rain.jpg
-    - assets/images/snow.jpg
-    - assets/images/drizzle.jpg
-    - assets/images/fog.jpg
-    - assets/images/thunderstorm.jpg
     - assets/images/default.jpg
+
+    # - assets/images/cloud_background.jpg
+    # - assets/images/clear.jpg
+    # - assets/images/clouds.jpg
+    # - assets/images/rain.jpg
+    # - assets/images/snow.jpg
+    # - assets/images/drizzle.jpg
+    # - assets/images/Night.jpg
+    # - assets/images/thunderstorm.jpg
+
+    - assets/icon/clear.png
+    - assets/icon/clouds.png
+    - assets/icon/rain.png
+    - assets/icon/drizzle.png
+    - assets/icon/snow.png
+    - assets/icon/fog.png
+    - assets/icon/thunderstorm.png
+
+    - assets/images/Morning.jpg
+    - assets/images/Day.jpg
+    - assets/images/Night.jpg
