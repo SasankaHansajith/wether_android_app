@@ -380,6 +380,8 @@ class _infoCard extends StatelessWidget {
             style: const TextStyle(fontSize: 11, color: Colors.white70),
           ),
         ],
+
+        
       ),
     );
   }
