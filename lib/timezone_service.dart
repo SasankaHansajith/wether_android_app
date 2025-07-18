@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class TimezoneService {
-  final String _apiKey = 'FC4JTYGKNLUN'; // make sure it's valid
+  final String _apiKey = 'FC4JTYGKNLUN';
 
   Future<String> getCityTime(double lat, double lon) async {
     final url = Uri.parse(
@@ -12,20 +12,25 @@ class TimezoneService {
 
     try {
       final response = await http.get(url);
-      print("API URL: $url");
-      print("API Status Code: ${response.statusCode}");
-      print("API Response Body: ${response.body}");
+      print("TimeZone API URL: $url");
+      print("TimeZone API Status Code: ${response.statusCode}");
+      print("TimeZone API Response Body: ${response.body}");
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         if (data['status'] == 'OK' && data['formatted'] != null) {
-          return data['formatted'];
+          // Extract time from formatted string like "2024-01-01 14:30:00"
+          String formatted = data['formatted'];
+          print("Formatted time: $formatted");
+          return formatted;
         } else {
           print("TimeZoneDB Error: ${data['message']}");
         }
+      } else {
+        print("TimeZone API Error: ${response.statusCode}");
       }
     } catch (e) {
-      print("HTTP Error: $e");
+      print("TimeZone HTTP Error: $e");
     }
 
     return "Time not available";

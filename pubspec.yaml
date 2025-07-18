@@ -1,6 +1,6 @@
-name: wether_app
-description: "A new Flutter project."
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+name: cityclime
+description: "A weather app for city climate information."
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -12,16 +12,25 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
-  font_awesome_flutter: ^10.7.0 # Keep only one version
+  font_awesome_flutter: ^10.7.0
   material_design_icons_flutter: ^7.0.7296
   flutter_vector_icons: ^2.0.0
   http: ^0.13.6
   intl: ^0.18.1
+  video_player: ^2.8.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/logoo.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/icon/logoo.png"
 
 flutter:
   uses-material-design: true
@@ -31,15 +40,9 @@ flutter:
     - assets/images/login_bg.jpg
     - assets/images/background.jpg
     - assets/images/default.jpg
-
-    # - assets/images/cloud_background.jpg
-    # - assets/images/clear.jpg
-    # - assets/images/clouds.jpg
-    # - assets/images/rain.jpg
-    # - assets/images/snow.jpg
-    # - assets/images/drizzle.jpg
-    # - assets/images/Night.jpg
-    # - assets/images/thunderstorm.jpg
+    - assets/icon/logo.png
+    - assets/icon/logoo.png
+    - assets/videos/default.mp4
 
     - assets/icon/clear.png
     - assets/icon/clouds.png

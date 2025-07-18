@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
 import 'SignUpPage.dart';
-import '1stloging.dart'; // renamed FirstLoginPage
 import 'MainPage.dart';
+import 'first.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Weather App',
+      title: 'CityClime',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const FirstLoginPage(),
+        '/': (context) => const FirstPage(),
         '/LoginPage': (context) => const LoginPage(),
         '/SignUpPage': (context) => const SignUpPage(),
         '/MainPage': (context) => const MainPage(),

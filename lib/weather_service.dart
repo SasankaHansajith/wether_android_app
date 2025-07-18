@@ -17,17 +17,17 @@ class WeatherService {
       final country = _getCountryName(countryCode);
 
       return {
-        "temperature": "${json['main']['temp'].round()} ℃",
-        "humidity": "${json['main']['humidity']}%",
-        "windSpeed": "${json['wind']['speed']} Km/h",
-        "longitude": "$lon° E",
-        "latitude": "$lat° N",
-        "rawLongitude": lon.toString(), // Add these
-        "rawLatitude": lat.toString(),
-        "condition": json['weather'][0]['main'].toLowerCase(),
-        "description": json['weather'][0]['description'],
-        "city": json['name'],
-        "country": country,
+        'city': json['name'],
+        'country': country,
+        'temperature': "${json['main']['temp'].round()}°C",
+        'humidity': "${json['main']['humidity']}%",
+        'windSpeed': "${json['wind']['speed']} m/s",
+        'rawLatitude': lat.toString(),
+        'rawLongitude': lon.toString(),
+        'longitude': "${lon.toStringAsFixed(2)}°",
+        'latitude': "${lat.toStringAsFixed(2)}°",
+        'condition': json['weather'][0]['main'],
+        'description': json['weather'][0]['description'],
       };
     } else if (response.statusCode == 404) {
       throw Exception("City not found: $city");
@@ -49,8 +49,27 @@ class WeatherService {
       "IT": "Italy",
       "CA": "Canada",
       "AU": "Australia",
-      "RU": "Russia",
       "BR": "Brazil",
+      "MX": "Mexico",
+      "ES": "Spain",
+      "RU": "Russia",
+      "KR": "South Korea",
+      "TH": "Thailand",
+      "VN": "Vietnam",
+      "PH": "Philippines",
+      "SG": "Singapore",
+      "MY": "Malaysia",
+      "ID": "Indonesia",
+      "PK": "Pakistan",
+      "BD": "Bangladesh",
+      "NL": "Netherlands",
+      "BE": "Belgium",
+      "CH": "Switzerland",
+      "AT": "Austria",
+      "SE": "Sweden",
+      "NO": "Norway",
+      "DK": "Denmark",
+      "FI": "Finland",
     };
     return countryMap[code] ?? code;
   }
